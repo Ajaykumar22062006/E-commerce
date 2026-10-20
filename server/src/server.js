@@ -93,6 +93,7 @@ async function startServer() {
     ensurePortFree(PORT);
 
     // Verify database connection with resilient retries
+    logger.info(`Connecting to database at ${process.env.DB_HOST || 'localhost'}:${process.env.DB_PORT || 3306} [database: ${process.env.DB_NAME || 'buildmart'}]...`);
     await verifyDatabaseWithRetry();
 
     serverInstance = app.listen(PORT, () => {
