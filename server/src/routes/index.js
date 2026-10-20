@@ -16,6 +16,21 @@ import deliveryRoutes from './deliveryRoutes.js';
 
 const router = express.Router();
 
+// Root API Welcome / Status
+router.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'BuildMart API is online and operational',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      products: '/api/products',
+      categories: '/api/categories',
+      orders: '/api/orders'
+    }
+  });
+});
+
 router.use('/auth', authRoutes);
 router.use('/categories', categoryRoutes);
 router.use('/products', productRoutes);
