@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
